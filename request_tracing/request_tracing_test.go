@@ -21,7 +21,7 @@ func TestNoHeaders(t *testing.T) {
 	}
 
 	if span_id != trace_id {
-		t.Error("Span ID != Trace ID: '%s' != '%s'", span_id, trace_id)
+		t.Errorf("Span ID != Trace ID: '%s' != '%s'", span_id, trace_id)
 	}
 }
 
@@ -53,7 +53,7 @@ func TestTraceIDHeader(t *testing.T) {
 	}
 
 	if orig_span_id != span_id {
-		t.Error("Original Span ID doesn't match Span ID: '%s' != '%s'",
+		t.Errorf("Original Span ID doesn't match Span ID: '%s' != '%s'",
 			orig_span_id,
 			span_id,
 		)
@@ -136,7 +136,7 @@ func TestSpanIDHeader(t *testing.T) {
 	}
 
 	if span_id != trace_id {
-		t.Error("Span ID != Trace ID: '%s' != '%s'", span_id, trace_id)
+		t.Errorf("Span ID != Trace ID: '%s' != '%s'", span_id, trace_id)
 	}
 }
 
@@ -170,6 +170,6 @@ func TestTraceAndSpanIDHeaders(t *testing.T) {
 	}
 
 	if span_id == trace_id {
-		t.Error("Span ID == Trace ID: '%s' == '%s'", span_id, trace_id)
+		t.Errorf("Span ID == Trace ID: '%s' == '%s'", span_id, trace_id)
 	}
 }
